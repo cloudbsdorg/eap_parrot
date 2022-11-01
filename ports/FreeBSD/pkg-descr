@@ -1,0 +1,6 @@
+eap_parrot is a network utility that relays packets between network 
+interfaces used by the Extensible Authentication Protocol over LAN 
+protocol for a man in the middle authentication with an ISP to 
+create their own primary router.
+
+LICENSE: GPL3

@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# EAP Parrot startup script
+
+# PROVIDE: eap_parrot
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# eap_parrot_enable (bool):	Set to NO by default.
+#               		Set it to YES to enable eap_parrot.
+# eap_parrot_config (string):   Set the path to the configuration file.
+#
+
+. /etc/rc.subr
+
+name=eap_parrot
+rcvar=${name}_enable
+
+: ${eap_parrot_enable:=NO}
+: ${eap_parrot_config:="/usr/local/etc/eap_parrot/config.toml"}
+
+command=/usr/local/bin/${name}
+start_cmd="eap_parrot_start"
+
+eap_parrot_start()
+{
+	${command} -config ${eap_parrot_config} >/dev/null 2>&1 &
+}
+
+load_rc_config ${name}
+run_rc_command "$1"

@@ -1,0 +1,73 @@
+.Dd November 5, 2022
+.Dt EAP_PARROT 1
+.Os
+.Sh NAME
+.Nm eap_parrot
+.Nd replay EAP packets between network interfaces
+.Sh SYNOPSIS	
+.Nm eap_parrot
+.Op Fl config Ar <path/to/config.toml>
+.Sh DESCRIPTION
+.P
+\fBeap_parrot\fR can be used to replay Extensible Authentication Protocol (EAP) packets between network
+interfaces.
+.Sh OPTIONS
+.P
+\fB\-config\fR <path/to/config.toml>
+.P
+The path to the configuration file.
+.P
+Default: /usr/local/etc/eap_parrot/config.toml
+.P
+
+.Sh RC CONFIGURATION
+
+eap_parrot_enable
+
+eap_parrot_config
+.P
+Default: /usr/local/etc/eap_parrot/config.toml
+
+
+
+service eap_parrot enable
+
+service eap_parrot start
+
+.Sh CONFIGURATION FILE - /usr/local/etc/eap_parrot/config.toml
+.P
+[network]
+.P
+wan_interface="eth1"
+.P
+router_interface="eth2"
+.P
+vlan_id=-1
+.P
+promiscuous_mode=false
+.P
+.P
+[logging]
+.P
+syslog=false
+.P
+debug=false
+.P
+debug_packets=false
+.P
+.P
+[ignore]
+.IP
+start=false
+.P
+logoff=false
+
+
+.Sh COPYRIGHT
+Code and design copyright © 2022, Mark LaPointe <\fBmark@cloudbsd.org\fR>. Source code available under the GPLv3 licence.
+
+.Sh "SEE ALSO"
+\fIhttps://github.com/mjonuschat/eap_parrot\fR - Original Project
+
+\fIhttps://github.com/cloudbsdorg/eap_parrot\fR - Source Code
+

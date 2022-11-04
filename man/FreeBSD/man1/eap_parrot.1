@@ -54,7 +54,7 @@ Let alone that AT&\T has been known to change firewall rules on the router.
 ie: Activating rules that cause IPv6 not to function as expected.
 
 .RS 0
-EAP Parrot is a tool to create a man-in-the-middle "attack", where one creates a router with FreeBSD/OpenBSD/etc.
+EAP Parrot is a tool to create a man-in-the-middle "attack" to authenticate with the connection from AT&\T, where one creates a router with FreeBSD/OpenBSD/etc.
 with 3 network interface cards (NIC(s)).
 
 .IP "1." 4
@@ -63,19 +63,27 @@ WAN Connection
 - Plug into demarcation for AT&\T fiber (Possibly 'The Wall').
 .RS 0
 - One will have to clone the MAC address of their modem on the WAN interface to properly authenticate.
+.RS 0
+- "wan_interface" in configuration file.
 .RE
 .RS -4
 .IP "2." 4
 Connection to modem
 .RS 4
 - Plugged into the ONT interface.
+.RS 0
+- "router_interface" in configuration file.
 .RE
+.RS -4
 .IP "3." 4
 Local Area Network
 .RS 4
 - Plugged into a switch on ones network
+.RS 0
+- EAP Parrot doesn't need to know about this interface, but one may need it to complete the router.
 .RE
 
+.RS -6
 .PP
 Morton Jonuschat wrote the original eap_parrot service.
 .RS 2

@@ -157,17 +157,17 @@ The configuration file is written using the TOML format (akin to INI).
 .RS 0
 There are 3 sections to the configuration file:
 .P
-.RS 0
-"\fB[network]\fR" for network interface properties,
+.RS 4
+- "\fB[network]\fR" for network interface properties
 .P
 .RS 0
-"\fB[logging]\fR" for logging options,
+- "\fB[logging]\fR" for logging options
 .P
 .RS 0
 and
 .P
 .RS 0
-"\fB[ignore]\fR" to ignore certain packet types.
+- "\fB[ignore]\fR" to ignore certain packet types
 
 .SH EAP PARROT CONFIGURATION FILE - SETTINGS DESCRIPTIONS
 .P
@@ -292,22 +292,23 @@ logoff=false
 \fBTo enable EAP Parrot via service:\fR
 .RS 0
 
-.RS 0
+.RS 2
 service eap_parrot enable
 
-.RS 0
+.RS -2
 \fBThen start EAP Parrot via service:\fR
 .RS 0
 
-.RS 0
+.RS 2
 service eap_parrot start
 
-.RS 0
+.RS -2
 \fBThen stop EAP Parrot via service\fR (if needed)\fB:\fR
 .RS 0
 
-.RS 0
+.RS 2
 service eap_parrot stop
+.RS -2
 
 .SH "AUTHORS"
 .P

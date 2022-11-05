@@ -150,7 +150,48 @@ eap_parrot_config="/usr/local/etc/eap_parrot/config.toml"
 .SH CONFIGURATION FILE - /usr/local/etc/eap_parrot/config.toml
 .P
 .RS 0
+.P
+.RS 0
+The configuration file is written using the TOML format (akin to INI).
+.P
+.RS 0
+There are 3 sections to the configuration file:
+.P
+.RS 0
+"\fB[network]\fR" for network interface properties,
+.P
+.RS 0
+"\fB[logging]\fR" for logging options,
+.P
+.RS 0
+and
+.P
+.RS 0
+"\fB[ignore]\fR" to ignore certain packet types.
 
+.SH CONFIGURATION FILE - SETTINGS DESCRIPTIONS
+.P
+.RS 0
+.P
+.RS 0
+\fB*\fRMost\fB*\fR users should only need to modify the \fB[network]\fR section of the configuration.
+.P
+.RS 0
+.P
+.RS 0
+\fBVariables of [network]\fR
+.P
+.RS 0
+
+.P
+.RS 0
+\fBVariables of [logging]\fR
+.P
+.RS 0
+
+.P
+.RS 0
+\fBVariables of [ignore]\fR
 
 .RS -7
 .SH EXAMPLE CONFIGURATION

@@ -26,12 +26,19 @@
 .\" * MAIN CONTENT STARTS HERE *
 .\" -----------------------------------------------------------------
 .SH "NAME"
+.P
+.RS 0
+
 eap_parrot - replay EAP packets between network interfaces
 .SH SYNOPSIS
+.P
+.RS 0
 .HP \w'\fBeap_parrot\fR\ 'u
 \fBeap_parrot\fR [-config <path/to/config.toml>]
 .SH DESCRIPTION
 .P
+.RS 0
+
 \fBeap_parrot\fR can be used to replay Extensible Authentication Protocol (EAP) packets between network
 interfaces.
 
@@ -92,6 +99,7 @@ Morton Jonuschat wrote the original eap_parrot service.
 
 .SH OPTIONS
 .RS 0
+
 \fB\-config\fR <path/to/config.toml>
 .RS 6
 The path to the configuration file.
@@ -100,9 +108,12 @@ Default: /usr/local/etc/eap_parrot/config.toml
 .P
 
 .SH RC CONFIGURATION VARIABLES
+.P
+.RS 0
+
 There are only 2 RC variables, it is nice and simple with an enabled, and configuration file location settings.
 
-.RS -7
+.RS 0
 eap_parrot_enable
 .RS 2
 - To state if the service is active or not.
@@ -123,10 +134,11 @@ eap_parrot_config
 /etc/eap_parrot/config.toml
 
 .RS -7
-Example /etc/rc.conf entries:
-
+.SH EXAMPLE RC CONFIGURATION ENTRIES
 .RS 0
-# Activate the service
+
+.RS -7
+# Enable the service
 .RS 0
 eap_parrot_enable="YES"
 
@@ -137,9 +149,12 @@ eap_parrot_config="/usr/local/etc/eap_parrot/config.toml"
 
 .SH CONFIGURATION FILE - /usr/local/etc/eap_parrot/config.toml
 .P
+.RS 0
+
 
 .RS -7
-Example configuration:
+.SH EXAMPLE CONFIGURATION
+.RS -7
 
 .RS 0
 [network]
@@ -169,6 +184,8 @@ start=false
 logoff=false
 
 .SH ACTIVATING EAP PARROT
+.P
+.RS 0
 
 .RS 0
 To enable EAP Parrot via service:
@@ -186,6 +203,8 @@ Then stop EAP Parrot via service:
 service eap_parrot stop
 
 .SH "AUTHORS"
+.P
+.RS 0
 .PP
 Morton Jonuschat wrote the original eap_parrot service.
 .RS 2
@@ -199,6 +218,9 @@ Mark LaPointe <mark@cloudbsd\&.org> is the maintainer of this FreeBSD port, and 
 - https://cloudbsd.org
 
 .SH "SEE ALSO"
+.P
+.RS 0
+
 .IP "1." 4
 Original Project
 .RS 4
@@ -216,4 +238,7 @@ Using an OpenBSD Router with AT&T U-Verse
 .RE
 
 .SH LICENSE
+.P
+.RS 0
+
 EAP Parrot is licensed with the GNU Public License Version 3.

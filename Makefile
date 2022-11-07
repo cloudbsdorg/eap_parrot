@@ -1,8 +1,5 @@
 default: all
 
-UNAME_S=$$(exec uname -s)
-UNAME_P=$$(exec uname -p)
-SHELL_ENV=$$SHELL
 BIN_TARGET=/usr/local/bin/
 CONFIG_TARGET=/usr/local/etc/eap_parrot/
 RC_TARGET=/usr/local/etc/rc.d/

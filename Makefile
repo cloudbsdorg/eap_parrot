@@ -11,7 +11,7 @@ build:
 	@go get
 	@go install
 	@go build -o bin/eap_parrot
-	@gzip man/man1/eap_parrot.1
+	@gzip -k man/man1/eap_parrot.1
 
 clean:
 	@rm -rf bin

@@ -10,18 +10,18 @@ RC_TARGET=/usr/local/etc/rc.d/
 all: clean build
 
 build:
-        go get
-        go install
-        go build -o bin/eap_parrot
+	go get
+	go install
+	go build -o bin/eap_parrot
 
 clean:
-        @rm -rf bin
-        @go clean
+	@rm -rf bin
+	@go clean
 
 install:
-        @mkdir -p $(BIN_TARGET) $(CONFIG_TARGET)
-        @cp bin/eap_parrot $(BIN_TARGET)
-        @cp *.toml $(CONFIG_TARGET)
-        @mkdir -p $(RC_TARGET)
-        @cp init/FreeBSD/* $(RC_TARGET)
-		@cp man/FreeBSD/man1/eap_parrot.1 /usr/local/share/man/
+	@mkdir -p $(BIN_TARGET) $(CONFIG_TARGET)
+	@cp bin/eap_parrot $(BIN_TARGET)
+	@cp *.toml $(CONFIG_TARGET)
+	@mkdir -p $(RC_TARGET)
+	@cp init/FreeBSD/* $(RC_TARGET)
+	@cp man/FreeBSD/man1/eap_parrot.1 /usr/local/share/man/

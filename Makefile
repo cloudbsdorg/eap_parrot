@@ -19,9 +19,13 @@ clean:
 	@go clean
 
 install:
-	@mkdir -p $(BIN_TARGET) $(CONFIG_TARGET)
+	# Make sure the configuration directory exists
+	@mkdir -p $(CONFIG_TARGET)
+	# Copy the bin to the proper directory
 	@cp bin/eap_parrot $(BIN_TARGET)
+	# Copy the base configuration to the proper directory
 	@cp *.toml $(CONFIG_TARGET)
-	@mkdir -p $(RC_TARGET)
+	# Copy the FreeBSD init script
 	@cp init/FreeBSD/* $(RC_TARGET)
-	@cp man/man1/* $(MAN_TARGET)
+	# Copy the man page(s)
+	@cp man/man1/eap_parrot.1.gz $(MAN_TARGET)

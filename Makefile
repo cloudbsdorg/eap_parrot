@@ -18,6 +18,7 @@ build:
 
 clean:
 	@rm -rf bin
+	@rm man/man1/eap_parrot.1.gz
 	@go clean
 
 install:

@@ -39,7 +39,7 @@ func initLogging() {
 }
 
 func main() {
-	configFile := flag.String("config", "/etc/eap_parrot.toml", "Full path to the config file")
+	configFile := flag.String("config", "/usr/local/etc/eap_parrot/config.toml", "Full path to the config file")
 
 	flag.Parse()
 

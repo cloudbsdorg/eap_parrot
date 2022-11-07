@@ -1,6 +1,6 @@
 [network]
-wan_interface="eth1"
-router_interface="eth2"
+wan_interface="em0"
+router_interface="em1"
 vlan_id=-1
 promiscuous_mode=false
 

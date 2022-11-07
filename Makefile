@@ -26,4 +26,4 @@ install:
 	@cp *.toml $(CONFIG_TARGET)
 	@mkdir -p $(RC_TARGET)
 	@cp init/FreeBSD/* $(RC_TARGET)
-	@cp man/man1/* $(MANTARGET)
+	@cp man/man1/* $(MAN_TARGET)

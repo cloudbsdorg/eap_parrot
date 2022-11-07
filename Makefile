@@ -10,9 +10,9 @@ RC_TARGET=/usr/local/etc/rc.d/
 all: clean build
 
 build:
-	go get
-	go install
-	go build -o bin/eap_parrot
+	@go get
+	@go install
+	@go build -o bin/eap_parrot
 
 clean:
 	@rm -rf bin

@@ -26,6 +26,6 @@ install:
 	# Copy the base configuration to the proper directory
 	@cp config.toml $(CONFIG_TARGET)
 	# Copy the FreeBSD init script
-	@cp init/FreeBSD/* $(RC_TARGET)
+	@cp init/FreeBSD/eap_parrot $(RC_TARGET)
 	# Copy the man page(s)
 	@cp man/man1/eap_parrot.1.gz $(MAN_TARGET)

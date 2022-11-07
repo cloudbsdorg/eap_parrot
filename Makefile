@@ -6,6 +6,7 @@ SHELL_ENV=$$SHELL
 BIN_TARGET=/usr/local/bin/
 CONFIG_TARGET=/usr/local/etc/eap_parrot/
 RC_TARGET=/usr/local/etc/rc.d/
+MAN_TARGET=/usr/local/man/man1/
 
 all: clean build
 
@@ -13,6 +14,7 @@ build:
 	@go get
 	@go install
 	@go build -o bin/eap_parrot
+	@gzip man/man1/eap_parrot.1
 
 clean:
 	@rm -rf bin
@@ -24,4 +26,4 @@ install:
 	@cp *.toml $(CONFIG_TARGET)
 	@mkdir -p $(RC_TARGET)
 	@cp init/FreeBSD/* $(RC_TARGET)
-	@cp man/FreeBSD/man1/eap_parrot.1 /usr/local/share/man/
+	@cp man/man1/* $(MANTARGET)

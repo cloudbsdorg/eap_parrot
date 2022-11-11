@@ -21,9 +21,9 @@ rcvar=eap_parrot_enable
 load_rc_config ${name}
 
 : ${eap_parrot_enable:=NO}
-: ${eap_parrot_config:=/usr/local/etc/eap_parrot/config.toml}
+: ${eap_parrot_config:=${_localbase}/etc/eap_parrot/config.toml}
 
-command=/usr/local/bin/${name}
+command=${_localbase}/bin/${name}
 start_cmd=eap_parrot_start
 
 eap_parrot_start()

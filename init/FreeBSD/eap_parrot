@@ -28,9 +28,9 @@ start_cmd=eap_parrot_start
 
 eap_parrot_start()
 {
-        @echo "Starting EAP Parrot."
+        echo "Starting EAP Parrot."
         ${command} -config ${eap_parrot_config} >/dev/null 2>&1 &
-        @echo "EAP Parrot started."
+        echo "EAP Parrot started."
 
 }
 

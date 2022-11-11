@@ -8,26 +8,30 @@
 
 # Add the following to /etc/rc.conf[.local] to enable this service
 #
-# eap_parrot_enable (bool):	Set to NO by default.
-#               		Set it to YES to enable eap_parrot.
+# eap_parrot_enable (bool):     Set to NO by default.
+#                               Set it to YES to enable eap_parrot.
 # eap_parrot_config (string):   Set the path to the configuration file.
 #
 
 . /etc/rc.subr
-
+desc="Extensible Authentication Protocol Parrot"
 name=eap_parrot
-rcvar=${name}_enable
+rcvar=eap_parrot_enable
+
+load_rc_config ${name}
 
 : ${eap_parrot_enable:=NO}
-: ${eap_parrot_config:="/usr/local/etc/eap_parrot/config.toml"}
+: ${eap_parrot_config:=/usr/local/etc/eap_parrot/config.toml}
 
 command=/usr/local/bin/${name}
-start_cmd="eap_parrot_start"
+start_cmd=eap_parrot_start
 
 eap_parrot_start()
 {
-	${command} -config ${eap_parrot_config} >/dev/null 2>&1 &
+        @echo "Starting EAP Parrot."
+        ${command} -config ${eap_parrot_config} >/dev/null 2>&1 &
+        @echo "EAP Parrot started."
+
 }
 
-load_rc_config ${name}
 run_rc_command "$1"

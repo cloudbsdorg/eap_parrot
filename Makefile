@@ -29,3 +29,4 @@ install:
 	@cp init/FreeBSD/eap_parrot $(RC_TARGET)
 	# Copy the man page(s)
 	@cp man/man1/eap_parrot.1.gz $(MAN_TARGET)
+
